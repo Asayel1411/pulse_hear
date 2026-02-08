@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'views/splash-elaf/splash_screen.dart';
 import 'views/auth-elaf/start_screen.dart';
 import 'views/auth-elaf/sign_in_screen.dart';
