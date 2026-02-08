@@ -1,5 +1,5 @@
 name: pulse_hear
-description: "A new Flutter project."
+description: "PulseHear App for Deaf and Hard of Hearing"
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,16 +9,26 @@ environment:
 dependencies:
   flutter:      
     sdk: flutter
-  google_fonts: ^6.1.0
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+
+  # الصور (تأكدي إنك غيرتيها لـ png في المجلد)
   assets:
-    - assets/logo.svg
-    - assets/waves.svg
+    - assets/logo.png
+    - assets/waves.png
+
+  # الخطوط
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf # نفس الاسم في صورتك بالضبط
+    - family: SF Pro
+      fonts:
+        - asset: assets/fonts/SF-Pro-Regular.ttf # تأكدي من وجود هذا الملف أيضاً f272aee36f2acde65ec4caeabf33588e7a071a50
+
