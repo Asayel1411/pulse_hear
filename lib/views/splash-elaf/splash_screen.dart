@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'start_screen.dart'; // We'll create this next
+import '../auth-elaf/start_screen.dart'; 
+ // We'll create this next
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
