@@ -61,7 +61,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
             ),
           ),
           Positioned(
-            bottom: -100,
+            bottom: -130,
             left: -150,
             child: Container(
               width: 550,
@@ -112,7 +112,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                           child: const Center(
                             child: Icon(
                               Icons.bluetooth,
-                              size: 90,
+                              size: 150,
                               color: Colors.white,
                             ),
                           ),
