@@ -9,43 +9,51 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF191834),
+      backgroundColor: const Color(0xFF191834), // Dark Navy
       body: Stack(
         children: [
-          // تم تصحيح المسار ليتوافق مع مجلداتك
+          // Waves image at the bottom
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Image.asset(
-              'assets/images/waves.png', // تعديل المسار والصيغة
+              'assets/images/waves.png', // تعديل المسار فقط
               fit: BoxFit.cover,
             ),
           ),
+          // Main content
           SafeArea(
             child: Column(
               children: [
                 const SizedBox(height: 60),
-                // تم تصحيح المسار ليتوافق مع مجلداتك
+                // Logo at the top center
                 Image.asset(
-                  'assets/images/logo.png', // تعديل المسار والصيغة
+                  'assets/images/logo.png', // تعديل المسار فقط
                   width: 200,
                   height: 200,
                 ),
                 const Spacer(),
+                // Buttons at the bottom
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
                     children: [
+                      // Sign In Button
                       SizedBox(
                         width: double.infinity,
                         height: 60,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signin'); // استخدام الـ Routes أفضل
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignInScreen(),
+                              ),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4F4D78),
+                            backgroundColor: const Color(0xFF4F4D78), // Dark Purple
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -55,21 +63,27 @@ class StartScreen extends StatelessWidget {
                             style: GoogleFonts.sarala(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: const Color(0xFFEFF0F7),
+                              color: const Color(0xFFEFF0F7), // White
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(height: 20),
+                      // Sign Up Button
                       SizedBox(
                         width: double.infinity,
                         height: 60,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signup'); // استخدام الـ Routes أفضل
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignUpScreen(),
+                              ),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFEFF0F7),
+                            backgroundColor: const Color(0xFFEFF0F7), // White
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -79,7 +93,7 @@ class StartScreen extends StatelessWidget {
                             style: GoogleFonts.sarala(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: const Color(0xFF4F4D78),
+                              color: const Color(0xFF4F4D78), // Dark Purple
                             ),
                           ),
                         ),
