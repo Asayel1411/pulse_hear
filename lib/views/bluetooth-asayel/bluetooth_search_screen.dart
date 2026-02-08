@@ -112,7 +112,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                           child: const Center(
                             child: Icon(
                               Icons.bluetooth,
-                              size: 150,
+                              size: 120,
                               color: Colors.white,
                             ),
                           ),
