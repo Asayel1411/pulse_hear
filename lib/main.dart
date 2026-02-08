@@ -11,7 +11,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,11 @@ class MyApp extends StatelessWidget {
       title: 'PulseHear',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.purple, 
       ),
+
       home: const SplashScreen(),
+      
       routes: {
         '/splash': (context) => const SplashScreen(),
         '/start': (context) => const StartScreen(),
