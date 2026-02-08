@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
 Widget build(BuildContext context) {
   return MaterialApp(
    
-    home: BluetoothScreen(), debugShowCheckedModeBanner: false,
+    home: PairWristbandScreen(), debugShowCheckedModeBanner: false,
   );
 }
 }
