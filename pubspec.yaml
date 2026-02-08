@@ -10,6 +10,10 @@ dependencies:
   flutter:      
     sdk: flutter
   google_fonts: ^8.0.1
+  # بما أن صورك SVG، يجب إضافة هذه المكتبة
+  flutter_svg: ^2.0.10+1
+  # مكتبة البلوتوث لمهمتك كمطور أول
+  flutter_blue_plus: ^1.31.0
 
 dev_dependencies:
   flutter_test:
@@ -19,12 +23,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # الصور (تأكدي إنك غيرتيها لـ png في المجلد)
   assets:
-    - assets/logo.png
-    - assets/waves.png
+    # التعديل هنا: أضفنا مجلد images لأن الصور بداخله وبصيغة svg
+    - assets/images/logo.svg
+    - assets/images/waves.svg
 
-  # الخطوط
   fonts:
     - family: Nunito
       fonts:
