@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../auth-elaf/start_screen.dart'; 
+import '../../views/auth-elaf/start_screen.dart';
  // We'll create this next
 
 class SplashScreen extends StatefulWidget {
