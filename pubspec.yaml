@@ -27,8 +27,5 @@ flutter:
   fonts:
     - family: Nunito
       fonts:
-        - asset: assets/fonts/Nunito-VariableFont_wght.ttf # نفس الاسم في صورتك بالضبط
-    - family: SF Pro
-      fonts:
-        - asset: assets/fonts/SF-Pro-Regular.ttf # تأكدي من وجود هذا الملف أيضاً f272aee36f2acde65ec4caeabf33588e7a071a50
-
+        - asset: assets/fonts/Nunito-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito-Italic-VariableFont_wght.ttf
