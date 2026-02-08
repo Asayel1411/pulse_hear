@@ -32,7 +32,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF191F33),
+      backgroundColor: const Color(0xFF191834),
       extendBodyBehindAppBar: true,
 
       // Transparent AppBar with back button

@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               child: Center(
                 child: Image.asset(
-                  'assets/logo.svg',
+                  'assets/images/logo.png',
                   width: 200,
                   height: 200,
                 ),
@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
             left: 0,
             right: 0,
             child: Image.asset(
-              'assets/waves.svg',
+              'assets/images/waves.png',
               fit: BoxFit.cover,
             ),
           ),
