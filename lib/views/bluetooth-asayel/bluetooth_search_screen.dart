@@ -14,7 +14,8 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
   @override
   void initState() {
     super.initState();
-    // إعداد حركة الوميض والنبض
+
+    // Animation controller for glow & pulse effect
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -23,6 +24,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
 
   @override
   void dispose() {
+    // Dispose animation controller to free resources
     _controller.dispose();
     super.dispose();
   }
@@ -32,6 +34,8 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
     return Scaffold(
       backgroundColor: const Color(0xFF191F33),
       extendBodyBehindAppBar: true,
+
+      // Transparent AppBar with back button
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -40,9 +44,10 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
           onPressed: () => Navigator.pop(context),
         ),
       ),
+
       body: Stack(
         children: [
-          // --- 1. الدوائر البنفسجية الخلفية في أسفل الشاشة ---
+          // 1. Decorative purple background circles at the bottom
           Positioned(
             bottom: -150,
             right: -100,
@@ -68,7 +73,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
             ),
           ),
 
-          // --- 2. المحتوى الأساسي ---
+          // 2. Main content
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -76,7 +81,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                 children: [
                   const SizedBox(height: 80),
 
-                  // --- أيقونة البلوتوث مع حلقة واحدة وهالة مضيئة تنبض ---
+                  // Bluetooth icon with glowing pulse animation
                   Center(
                     child: AnimatedBuilder(
                       animation: _controller,
@@ -86,17 +91,21 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                           height: 180,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            // الهالة المضيئة (Glow)
+
+                            // Glow effect around the Bluetooth icon
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFF5A6CFF).withOpacity(0.4 * (1 - _controller.value)),
+                                color: const Color(0xFF5A6CFF)
+                                    .withOpacity(0.4 * (1 - _controller.value)),
                                 blurRadius: 60,
                                 spreadRadius: 20 * _controller.value,
                               ),
                             ],
-                            // حلقة الوميض الوحيدة
+
+                            // Pulsing outer ring
                             border: Border.all(
-                              color: Colors.white.withOpacity(1 - _controller.value),
+                              color: Colors.white
+                                  .withOpacity(1 - _controller.value),
                               width: 3,
                             ),
                           ),
@@ -114,7 +123,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
 
                   const Spacer(),
 
-                  // النص التوضيحي بخط عريض (Bold)
+                  // Instruction text
                   const Text(
                     'Turn on your Bluetooth connection setting and make sure your Wristband is close to your phone',
                     textAlign: TextAlign.center,
@@ -122,24 +131,24 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                       color: Colors.white,
                       fontSize: 18,
                       height: 1.5,
-                      fontWeight: FontWeight.bold, // خط عريض
+                      
                     ),
                   ),
 
                   const SizedBox(height: 40),
 
-                  // زر الاقتران
+                  // Pair wristband button
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF32315E),
+                      backgroundColor: const Color.fromARGB(255, 34, 34, 60),
                       minimumSize: const Size(200, 56),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      elevation: 10,
+                      elevation: 15,
                     ),
                     onPressed: () {
-                      // منطق البحث عن سوار PulseHear
+                      // TODO: Implement wristband pairing logic
                     },
                     child: const Text(
                       'Pair Wristband',
@@ -150,6 +159,7 @@ class _PairWristbandScreenState extends State<PairWristbandScreen>
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 20),
                 ],
               ),
