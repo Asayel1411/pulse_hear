@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple, 
       ),
 
-      home: const SplashScreen(),
+      home: const StartScreen(),
       
       routes: {
         '/splash': (context) => const SplashScreen(),
