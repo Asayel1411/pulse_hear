@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulse_hear/views/dashboard-asayel/dashboard_screen.dart';
 import 'sign_up_screen.dart'; // We'll create this next
+
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -140,6 +142,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: ElevatedButton(
                         onPressed: () {
                           // TODO: Handle sign in logic
+                          // سطر الربط بالداشبورد بعد تسجيل الدخول
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashboardScreen(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF4F4D78), // Purple

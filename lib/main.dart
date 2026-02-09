@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pulse_hear/views/dashboard-asayel/dashboard_screen.dart';
 import 'views/splash-elaf/splash_screen.dart';
 import 'views/auth-elaf/start_screen.dart';
 import 'views/auth-elaf/sign_in_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple, 
       ),
 
-      home: const StartScreen(),
+      home: const SignInScreen(),
       
       routes: {
         '/splash': (context) => const SplashScreen(),
