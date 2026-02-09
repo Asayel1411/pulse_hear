@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulse_hear/views/bluetooth-asayel/bluetooth_search_screen.dart';
+import 'package:pulse_hear/views/soundlibrary-asayel/sound_library_screen.dart';
+
 
 
 class DashboardScreen extends StatelessWidget {
@@ -153,6 +155,11 @@ class DashboardScreen extends StatelessWidget {
                 mainAxisSpacing: 20,
                 children: [
                   _buildIconCard('Sound Library', 'assets/images/sound_library.png', () {
+                    // الربط بصفحة الساوند لايبراري
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SoundLibraryScreen()),
+                    );
                     print("Navigate to Sound Library");
                   }),
                   _buildIconCard('Keywords', 'assets/images/keyword-2 1.png', () {
