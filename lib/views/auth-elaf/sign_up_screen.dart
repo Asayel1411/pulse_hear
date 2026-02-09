@@ -37,8 +37,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // تم تعديل المسار هنا ليكون assets/images/logo.png
                   Image.asset(
-                    'assets/logo.svg',
+                    'assets/images/logo.png',
                     width: 100,
                     height: 100,
                   ),
