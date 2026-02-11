@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulse_hear/views/dashboard-asayel/dashboard_screen.dart';
 import 'sign_in_screen.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -37,8 +39,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // تم تعديل المسار هنا ليكون assets/images/logo.png
                   Image.asset(
-                    'assets/logo.svg',
+                    'assets/images/logo.png',
                     width: 100,
                     height: 100,
                   ),
@@ -164,6 +167,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: ElevatedButton(
                         onPressed: () {
                           // TODO: Handle sign up logic
+                          // سطر الربط بالداشبورد بعد إنشاء الحساب
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashboardScreen(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF4F4D78), // Purple
