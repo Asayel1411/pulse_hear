@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'sign_in_screen.dart'; // We'll create this next
-import 'sign_up_screen.dart'; // We'll create this next
+import 'sign_in_screen.dart'; 
+import 'sign_up_screen.dart'; 
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -17,9 +17,11 @@ class StartScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Image.asset(
-              'assets/waves.svg',
-              fit: BoxFit.cover,
+            child: IgnorePointer( // تمت إضافة هذا السطر لحل المشكلة
+              child: Image.asset(
+                'assets/images/waves.png', 
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           // Main content
@@ -29,7 +31,7 @@ class StartScreen extends StatelessWidget {
                 const SizedBox(height: 60),
                 // Logo at the top center
                 Image.asset(
-                  'assets/logo.svg',
+                  'assets/images/logo.png', 
                   width: 200,
                   height: 200,
                 ),
