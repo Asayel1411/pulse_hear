@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pulse_hear/views/bluetooth-asayel/bluetooth_search_screen.dart';
 import 'package:pulse_hear/views/soundlibrary-asayel/sound_library_screen.dart';
 
-
-
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
@@ -17,7 +15,7 @@ class DashboardScreen extends StatelessWidget {
           // 1. Header Section
           Container(
             width: double.infinity,
-            height: 150, 
+            height: 150,
             decoration: const BoxDecoration(
               color: Color(0xFF1D1B3F),
               borderRadius: BorderRadius.only(
@@ -36,11 +34,11 @@ class DashboardScreen extends StatelessWidget {
                   Positioned.fill(
                     child: Image.asset(
                       'assets/images/smallwaves.png',
-                      fit: BoxFit.cover, 
+                      fit: BoxFit.cover,
                     ),
                   ),
                   Positioned(
-                    bottom: -50, 
+                    bottom: -50,
                     child: Image.asset(
                       'assets/images/logo.png',
                       width: 260,
@@ -51,18 +49,14 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 25), 
+          const SizedBox(height: 25),
 
-          // 2. Connection Status Card - تم إضافة الربط هنا
+          // 2. Connection Status Card
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 19),
             child: InkWell(
               onTap: () {
-                // الانتقال لصفحة البلوتوث
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const PairWristbandScreen()),
-                );
+                Navigator.pushNamed(context, '/bluetooth');
               },
               borderRadius: BorderRadius.circular(40),
               child: Container(
@@ -86,15 +80,18 @@ class DashboardScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Image.asset('assets/images/watch.png', width: 110, height: 110),
+                        Image.asset('assets/images/watch.png',
+                            width: 110, height: 110),
                         const SizedBox(height: 6),
                         Container(
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white70, width: 1.5),
+                            border:
+                                Border.all(color: Colors.white70, width: 1.5),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Icon(Icons.power_settings_new, color: Colors.white, size: 20),
+                          child: const Icon(Icons.power_settings_new,
+                              color: Colors.white, size: 20),
                         )
                       ],
                     ),
@@ -113,23 +110,31 @@ class DashboardScreen extends StatelessWidget {
                           const Text(
                             'Your Wristband is ready to alert you',
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white70, fontSize: 11),
+                            style:
+                                TextStyle(color: Colors.white70, fontSize: 11),
                           ),
                           const SizedBox(height: 12),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 6),
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(color: Colors.white24),
                             ),
-                            child: Row(
+                            child: const Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                const Text('Battery level ', style: TextStyle(color: Colors.white, fontSize: 10)),
-                                const Text('100%', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                                const SizedBox(width: 8),
-                                const Icon(Icons.battery_full, color: Colors.greenAccent, size: 18),
+                                Text('Battery level ',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10)),
+                                Text('100%',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(width: 8),
+                                Icon(Icons.battery_full,
+                                    color: Colors.greenAccent, size: 18),
                               ],
                             ),
                           ),
@@ -142,38 +147,43 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20), 
+          const SizedBox(height: 20),
 
           // 3. Features Grid
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: GridView.count(
-                padding: const EdgeInsets.only(top: 0), 
+                padding: const EdgeInsets.only(top: 0),
                 crossAxisCount: 2,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
                 children: [
-                  _buildIconCard('Sound Library', 'assets/images/sound_library.png', () {
-                    // الربط بصفحة الساوند لايبراري
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SoundLibraryScreen()),
-                    );
-                    print("Navigate to Sound Library");
-                  }),
-                  _buildIconCard('Keywords', 'assets/images/keyword-2 1.png', () {
-                    print("Navigate to Keywords");
-                  }),
-                  _buildIconCard('Speech-To-Text', 'assets/images/speech_to_text.png', () {
-                    print("Navigate to Speech-To-Text");
-                  }),
-                  _buildIconCard('Text-To-Speech', 'assets/images/text_to_speech.png', () {
-                    print("Navigate to Text-To-Speech");
-                  }),
-                  _buildIconCard('Modes', 'assets/images/modes.png', () {
-                    print("Navigate to Modes");
-                  }),
+                  _buildIconCard(
+                    'Sound Library',
+                    'assets/images/sound_library.png',
+                    () => Navigator.pushNamed(context, '/sounds'),
+                  ),
+                  _buildIconCard(
+                    'Keywords',
+                    'assets/images/keyword-2 1.png',
+                    () => Navigator.pushNamed(context, '/keywords'), // ✅ FIXED
+                  ),
+                  _buildIconCard(
+                    'Speech-To-Text',
+                    'assets/images/speech_to_text.png',
+                    () => print("Navigate to Speech-To-Text"),
+                  ),
+                  _buildIconCard(
+                    'Text-To-Speech',
+                    'assets/images/text_to_speech.png',
+                    () => print("Navigate to Text-To-Speech"),
+                  ),
+                  _buildIconCard(
+                    'Modes',
+                    'assets/images/modes.png',
+                    () => print("Navigate to Modes"),
+                  ),
                 ],
               ),
             ),
@@ -191,15 +201,18 @@ class DashboardScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.home, color: Colors.white, size: 28),
+                  icon:
+                      const Icon(Icons.home, color: Colors.white, size: 28),
                   onPressed: () => print("Home tapped"),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.contact_phone_rounded, color: Colors.white54, size: 28),
+                  icon: const Icon(Icons.contact_phone_rounded,
+                      color: Colors.white54, size: 28),
                   onPressed: () => print("Contacts tapped"),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.settings, color: Colors.white54, size: 28),
+                  icon: const Icon(Icons.settings,
+                      color: Colors.white54, size: 28),
                   onPressed: () => print("Settings tapped"),
                 ),
               ],
