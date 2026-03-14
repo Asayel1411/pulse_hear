@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulse_hear/views/bluetooth-asayel/bluetooth_search_screen.dart';
 import 'package:pulse_hear/views/soundlibrary-asayel/sound_library_screen.dart';
+import 'package:pulse_hear/views/setting-elaf/setting_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -167,7 +168,7 @@ class DashboardScreen extends StatelessWidget {
                   _buildIconCard(
                     'Keywords',
                     'assets/images/keyword-2 1.png',
-                    () => Navigator.pushNamed(context, '/keywords'), // ✅ FIXED
+                    () => Navigator.pushNamed(context, '/keywords'),
                   ),
                   _buildIconCard(
                     'Speech-To-Text',
@@ -213,7 +214,13 @@ class DashboardScreen extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.settings,
                       color: Colors.white54, size: 28),
-                  onPressed: () => print("Settings tapped"),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  SettingsScreen()),
+                    );
+                  },
                 ),
               ],
             ),
