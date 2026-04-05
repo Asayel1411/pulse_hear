@@ -264,7 +264,7 @@ class _HomeTab extends StatelessWidget {
                   context,
                   'Modes',
                   'assets/images/modes.png',
-                  () => print("Navigate to Modes"),
+                  () => Navigator.pushNamed(context, '/select-mode'), // التعديل صار هنا
                 ),
               ],
             ),
