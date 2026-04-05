@@ -10,6 +10,7 @@ import 'views/keywords-elaf/add_keywords_screen.dart';
 import 'views/speech-to-text/speech_to_text_screen.dart';
 import 'views/text-to-speech/text_to_speech_screen.dart';
 import 'views/text-to-speech/quick_phrases_screen.dart';
+import 'views/select-mode/select_mode_screen.dart'; // ← ADD THIS
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/speech-to-text': (context) => const SpeechToTextScreen(),
         '/text-to-speech': (context) => const TextToSpeechScreen(),
         '/quick-phrases':  (context) => const QuickPhrasesScreen(),
+        '/select-mode':    (context) => const SelectModeScreen(), // ← ADD THIS
       },
     );
   }
